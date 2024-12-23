@@ -22,8 +22,8 @@ if __name__ == "__main__":
 
     DX = 0.01
     DT = 0.001
-    TIME = [2.5]
-    METHOD = upwind
+    TIME = [1]
+    METHOD = FCTS
     C = DT/DX
 
     _, axes = plt.subplots(1, 2, figsize=(15, 5))
@@ -48,4 +48,5 @@ if __name__ == "__main__":
     axes[1].set_title("g(x)")
 
     plt.suptitle(f"Solved With {METHOD.__name__}: DX={DX}, DT={DT}, C={C:.2f}")
+    plt.tight_layout()
     plt.show()
