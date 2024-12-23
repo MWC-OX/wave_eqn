@@ -1,11 +1,11 @@
 import matplotlib.pyplot as plt
 from solver import plot_time, generate_series, f_x, g_x
 
-def FCTS(up, u, un, DT, DX, c=1):
+def FTCS(up, u, un, DT, DX, c=1):
     return (-1) * ((c * DT)/(2 * DX)) * (un - up) + u
 
 def lax_freidman(up, u, un, DT, DX, c=1):
-    C = C = (c*DT)/DX 
+    C = (c*DT)/DX 
     return 0.5*(1-C)*un + 0.5*(1+C)*up
 
 def upwind(up, u, un, DT, DX, c=1):
@@ -21,9 +21,9 @@ def lax_wendoff(up, u, un, DT, DX, c=1):
 if __name__ == "__main__":
 
     DX = 0.01
-    DT = 0.001
+    DT = 0.0001
     TIME = [1]
-    METHOD = FCTS
+    METHOD = FTCS
     C = DT/DX
 
     _, axes = plt.subplots(1, 2, figsize=(15, 5))
